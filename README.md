@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-* [Instructions](#instructions)
+* Table of contents
 
 
 ## About the game
@@ -11,7 +11,7 @@ This memory game has been created with vanilla JavaScript with no support by any
 
 The memory game has been created according to the iinstructions given by Udacity.
 
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
+For instructions about playing the game please see below.
 
 ## Live version
 
