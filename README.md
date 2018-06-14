@@ -5,11 +5,11 @@
 * [Instructions](#instructions)
 
 
-## Instructions
+## About the game
 
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+This nice memory game has been created with vanilla Javascript with no support by any external Javascript library such as for example jQuery.
 
-To get started, open `js/app.js` and start building out the app's functionality
+The memory game has been created according to the iinstructions given by Udacity.
 
 For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
 
