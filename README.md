@@ -7,7 +7,7 @@
 
 ## About the game
 
-This nice memory game has been created with vanilla JavaScript with no support by any external JavaScript library such as for example jQuery.
+This memory game has been created with vanilla JavaScript with no support by any external JavaScript library such as for example jQuery.
 
 The memory game has been created according to the iinstructions given by Udacity.
 
