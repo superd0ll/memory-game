@@ -2,7 +2,9 @@
 
 ## Table of Contents
 
-* Table of contents
+* Content 1
+* Content 2
+
 
 
 ## About the game
