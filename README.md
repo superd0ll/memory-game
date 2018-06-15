@@ -16,6 +16,10 @@ The memory game has been created according to the instructions given by Udacity.
 
 For instructions about playing the game please see below.
 
+## How to play
+
+
+
 ## Live version
 
 To see a live version of the game click here.
