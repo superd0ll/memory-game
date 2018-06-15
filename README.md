@@ -12,7 +12,7 @@
 
 This memory game has been created with vanilla JavaScript with no support by any external JavaScript library such as for example jQuery.
 
-![memory game](https://github.com/superd0ll/memory-game.png)
+![memory game](https://github.com/superd0ll/memory-game/blob/master/img/memory-game.png)
 
 The memory game has been created according to the instructions given by Udacity.
 For instructions about playing the game please see below.
