@@ -20,7 +20,7 @@ restartBtn.addEventListener('click', function() {
 window.location.reload(true);
 });
 //Shuffle function from http://stackoverflow.com/a/2450976
-window.onload = function shuffle(xcardsArray) {
+function shuffle(xcardsArray) {
   var currentIndex = xcardsArray.length, temporaryValue, randomIndex;
   while (currentIndex !== 0) {
     randomIndex = Math.floor(Math.random() * currentIndex);
@@ -96,7 +96,7 @@ function checkEquality() {
 
 //Function to count the number of moves
 function numberOfMoves() {
-let m = (allMovesArray.length);
+let m = (parseInt(allMovesArray.length/2));
  moves.innerHTML= m + "";
 }
 
