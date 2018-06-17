@@ -1,44 +1,43 @@
 /*
  * Create a list that holds all of your cards
  */
+var cardsArray = [];
 var openCardsArray = [];
 var myCards = document.getElementById("myDeck");
 var cardsM = myCards.getElementsByTagName("li");
 var innerCard = myCards.getElementsByTagName("i");
+var restartBtn = document.getElementById("restartBtn");
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
  *   - loop through each card and create its HTML
  *   - add each card's HTML to the page
  */
-// //To be revised later
-//  //Add event listener to the repeat button
-// window.addEventListener("load", repeatBtnTop);
-// function repeatBtnTop() {
-// const faRepeat=document.getElementById('fa fa-repeat');
-// //Adding if statement to heck that faRepeat is not null before adding an event listener:
-// if (faRepeat) {
-// faRepeat.addEventListener('click', shuffle, false);
-// Shuffle function from http://stackoverflow.com/a/2450976
-function shuffle(xCardsArray) {
-  var currentIndex = xCardsArray.length, temporaryValue, randomIndex;
-
+//Add event listener to the repeat button
+restartBtn.addEventListener('click', function() {
+window.location.reload();
+addCardsId();
+shuffle(cardsArray);
+});
+//Shuffle function from http://stackoverflow.com/a/2450976
+function shuffle(xcardsArray) {
+  var currentIndex = xcardsArray.length, temporaryValue, randomIndex;
   while (currentIndex !== 0) {
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex -= 1;
     temporaryValue = xcardsArray[currentIndex];
-    xCardsArray[currentIndex] = xCardsArray[randomIndex];
-    xCardsArray[randomIndex] = temporaryValue;
+    xcardsArray[currentIndex] = xcardsArray[randomIndex];
+    xcardsArray[randomIndex] = temporaryValue;
   }
-
-  return xCardsArray;
+  return xcardsArray;
 }
 function addCardsId() {
+  console.log("cards is called");
   //Function to add event listener and change the state of the card
   //adding an id to all cards
   for (let i = 0; i < cardsM.length; i++) {
-    console.log(cardsM[i]);
     cardsM[i].id = i;
+    cardsArray.push(cardsM[i]);
     //adding an event listener to all cards
     cardsM[i].addEventListener("click", function () {
       //Change the class of the card to be visible after click
@@ -47,7 +46,6 @@ function addCardsId() {
       openCardsArray.push(cardsM[i].firstElementChild.className);
       if (openCardsArray.length === 2) {
         checkEquality();
-
       }
 
     });
@@ -78,7 +76,6 @@ function checkEquality() {
 
           cardsM[i].className = "card";
         }, 1500);
-
       }
     }
     for (let i = 0; i < cardsM.length; i++) {
