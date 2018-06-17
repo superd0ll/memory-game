@@ -15,12 +15,11 @@ var restartBtn = document.getElementById("restartBtn");
  */
 //Add event listener to the repeat button
 restartBtn.addEventListener('click', function() {
-window.location.reload();
-addCardsId();
-shuffle(cardsArray);
+window.location.reload(true);
 });
+
 //Shuffle function from http://stackoverflow.com/a/2450976
-function shuffle(xcardsArray) {
+window.onload = function shuffle(xcardsArray) {
   var currentIndex = xcardsArray.length, temporaryValue, randomIndex;
   while (currentIndex !== 0) {
     randomIndex = Math.floor(Math.random() * currentIndex);
@@ -31,12 +30,13 @@ function shuffle(xcardsArray) {
   }
   return xcardsArray;
 }
-function addCardsId() {
+window.onload = function addCardsId() {
   console.log("cards is called");
   //Function to add event listener and change the state of the card
   //adding an id to all cards
   for (let i = 0; i < cardsM.length; i++) {
     cardsM[i].id = i;
+    console.log(cardsM[i]);
     cardsArray.push(cardsM[i]);
     //adding an event listener to all cards
     cardsM[i].addEventListener("click", function () {
@@ -47,7 +47,6 @@ function addCardsId() {
       if (openCardsArray.length === 2) {
         checkEquality();
       }
-
     });
   }
 }
