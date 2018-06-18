@@ -1,6 +1,16 @@
-/*
- * Create a list that holds all of your cards
- */
+// Create a list that holds all of your cards
+var faDiamond = document.getElementsByClassName("fa fa-diamond")[0];
+var faPaperPlaneO = document.getElementsByClassName("fa fa-paper-plane-o")[0];
+var faAnchor = document.getElementsByClassName("fa fa-anchor")[0];
+var faBolt = document.getElementsByClassName("fa fa-bolt")[0];
+var faCube = document.getElementsByClassName("fa fa-cube")[0];
+var faLeaf= document.getElementsByClassName("fa fa-leaf")[0];
+var faBicycle = document.getElementsByClassName("fa fa-bicycle")[0];
+var faBomb = document.getElementsByClassName("fa fa-bomb")[0];
+
+var allCardsArray = [faDiamond, faDiamond, faPaperPlaneO, faPaperPlaneO, faAnchor, faAnchor, faBolt, faBolt, faCube, faCube,
+faLeaf, faLeaf, faBicycle, faBicycle, faBomb, faBomb];
+
 var matchingCardsArray = [];
 var openCardsArray = [];
 var allMovesArray =[];
@@ -33,7 +43,7 @@ function shuffle(xcardsArray) {
 }
 //Function to add event listener and change the state of the cards
 window.onload = function addCardsId() {
-  shuffle(cardsM);
+  shuffle(allCardsArray);
   numberOfMoves();
   //adding an id to all cards
   for (let i = 0; i < cardsM.length; i++) {
@@ -112,5 +122,3 @@ function matchingElements () {
     window.location.href = "winner.html";
   }
 }
-
-
