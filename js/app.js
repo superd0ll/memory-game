@@ -67,6 +67,7 @@ function checkEquality() {
         cardsM[i].className = "card match";
       }
     }
+    //calling function to call winner screen
     matchingElements ();
     //empty openCardsArray
     openCardsArray = [];
@@ -101,7 +102,6 @@ function numberOfMoves() {
 let m = (parseInt(allMovesArray.length/2));
  moves.innerHTML= m + "";
 }
-
 //Function to count the number of matching elements
 //Calling files to create winner screen with fireworks.
 //Code taken from https://codepen.io/funxer/pen/qKRQoj
