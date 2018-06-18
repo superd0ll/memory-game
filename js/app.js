@@ -103,6 +103,9 @@ let m = (parseInt(allMovesArray.length/2));
 }
 
 //Function to count the number of matching elements
+//Calling files to create winner screen with fireworks.
+//Code taken from https://codepen.io/funxer/pen/qKRQoj
+//(Elenium fireworks).
 function matchingElements () {
   let over = (matchingCardsArray.length);
   if (over===16) {
