@@ -33,6 +33,7 @@ function shuffle(xcardsArray) {
 }
 //Function to add event listener and change the state of the cards
 window.onload = function addCardsId() {
+  shuffle(cardsM);
   numberOfMoves();
   //adding an id to all cards
   for (let i = 0; i < cardsM.length; i++) {
@@ -66,6 +67,7 @@ function checkEquality() {
         cardsM[i].className = "card match";
       }
     }
+    matchingElements ();
     //empty openCardsArray
     openCardsArray = [];
   }
@@ -99,4 +101,13 @@ function numberOfMoves() {
 let m = (parseInt(allMovesArray.length/2));
  moves.innerHTML= m + "";
 }
+
+//Function to count the number of matching elements
+function matchingElements () {
+  let over = (matchingCardsArray.length);
+  if (over===16) {
+    window.location.href = "winner.html";
+  }
+}
+
 
