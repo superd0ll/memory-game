@@ -146,7 +146,7 @@ timer();
 /*Fireworks code taken from https://codepen.io/funxer/pen/qKRQoj (Elenium fireworks)*/
 /*code slightly altered*/
 function fireWorks() {
- / CLASSES
+ //CLASSES
 class Rect {
   constructor(x, y, w, h) {
     this.x = x;
@@ -325,3 +325,4 @@ function getTarget() {
   return { x, y };
 }
 }
+/*end of fireWorks */
