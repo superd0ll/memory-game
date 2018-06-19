@@ -2,11 +2,9 @@
 
 ## Table of Contents
 
-* Content 1
-* Content 2
-* Content 3
-* Content 4
-
+* About the game
+* How to play the game
+* Live version
 
 ## About the game
 ![memory game](https://github.com/superd0ll/memory-game/blob/master/img/memory-game.png)
