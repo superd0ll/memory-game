@@ -1,6 +1,6 @@
 # Memory Game Project
 
-The Memory Game Project by <a href="https://udacity.com">Udacity</a> is all about demonstrating mastery of HTML, CSS, and JavaScript. The assignment is to build a complete browser-based card matching game (also known as Concentration). <a href="https://udacity.com">Udacity</a> describes the game as not just any "memory game but as a shnazzy, well-designed, feature-packed memory game!" This project is part of the <a href="https://udacity.com">Udacity</a>'s <a href="https://eu.udacity.com/course/front-end-web-developer-nanodegree--nd001">Front End Developer Nanodegree program</a>.
+The Memory Game Project by <a href="https://udacity.com">Udacity</a> is all about demonstrating mastery of HTML, CSS, and JavaScript. The assignment is to build a complete browser-based card matching game (also known as Concentration). <a href="https://udacity.com">Udacity</a> describes the game as not just any "memory game but as a shnazzy, well-designed, feature-packed memory game". This project is part of the <a href="https://udacity.com">Udacity</a>'s <a href="https://eu.udacity.com/course/front-end-web-developer-nanodegree--nd001">Front End Developer Nanodegree program</a>.
 
 
 ## Table of Contents
