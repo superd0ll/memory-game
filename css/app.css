@@ -66,14 +66,39 @@ h1 {
 
 .deck .card.open {
     transform: rotateY(0);
-    background: #02b3e4;
+    background: #02ccba;
     cursor: default;
-
+    animation: color-me-in 5s; /* other keywords like "infinite alternate" can be useful here */
 }
+@keyframes color-me-in {
+    0% {
+      background: #15b8f8;
+    }
+    /* Adding a step in the middle */
+    10% {
+      background: #15b8f8;
+    }
+    100% {
+      background: #15b8f8;
+    }
+  }
+
 
 .deck .card.show {
     font-size: 33px;
 }
+@keyframes color-me-in {
+    0% {
+      background: #15b8f8;
+    }
+    /* Adding a step in the middle */
+    20% {
+      background: rgb(253, 75, 4);
+    }
+    100% {
+      background: rgb(253, 30, 1);
+    }
+  }
 
 .deck .card.match {
     cursor: default;
