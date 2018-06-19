@@ -27,5 +27,5 @@ The game ends once all cards have been correctly matched.
 
 ## Live version
 
-To see a live version of the game click here.
+To see a live version of the game click ![here] (https://superd0ll.github.io/memory-game/).
 
