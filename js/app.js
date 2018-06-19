@@ -105,7 +105,7 @@ function matchingElements() {
   }
     else if (matchingCardsArray.length === 16) {
     /*showing winner screen with fireworks*/
-    window.confirm("Congtatulations! You have finished the game! It took you " + stopwatch.textContent + "and " + (allMovesArray.length/2) + " number of moves");
+    window.confirm("Congratulations! You have finished the game! It took you " + stopwatch.textContent + "and " + (allMovesArray.length/2) + " number of moves");
   }
 }
 /*Function to add timer from https://jsfiddle.net/Daniel_Hug/pvk6p/ from Daniel Hug*/
@@ -132,3 +132,4 @@ function timer() {
     }
 }
 timer();
+/*end of stopwatch */
