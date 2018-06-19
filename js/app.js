@@ -103,12 +103,17 @@ function matchingElements() {
     /*showing winner screen with fireworks*/
     window.location.href = "winner.html";
   }
-    else if (matchingCardsArray.length === 16) {
-    /*showing winner screen with fireworks*/
-    window.confirm("Congratulations! You have finished the game! It took you " + stopwatch.textContent + "and " + (allMovesArray.length/2) + " number of moves");
+    else if (matchingCardsArray.length === 16 && ((allMovesArray.length) > 16) && ((allMovesArray.length) <= 40)) {
+    /*showing message window with stats*/
+    window.confirm("Congratulations! You won! It took you " + stopwatch.textContent + "and " + (allMovesArray.length/2) + " number of moves and 1 star" );
+  }
+  else if (matchingCardsArray.length === 16 && ((allMovesArray.length) > 40)) {
+    /*showing message window with stats*/
+    window.confirm("Congratulations! You won! It took you " + stopwatch.textContent + "and " + (allMovesArray.length/2) + " number of moves and 2 stars" );
   }
 }
-/*Function to add timer from https://jsfiddle.net/Daniel_Hug/pvk6p/ from Daniel Hug*/
+
+/*Function stopwatch to add timer from https://jsfiddle.net/Daniel_Hug/pvk6p/ (by Daniel Hug)*/
 var stopwatch = document.getElementById('stopwatch'),
     seconds = 0, minutes = 0, hours = 0,
     t;
