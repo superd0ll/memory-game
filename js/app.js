@@ -93,14 +93,17 @@ function checkEquality() {
     openCardsArray = [];
   }
 }
+
 //Function to count the number of moves
 function numberOfMoves() {
 let m = (parseInt(allMovesArray.length/2));
 moves.innerHTML= m + "";
+if (m === 16 && matchingCardsArray.length === 16) {
+ window.location.href = "winner.html";
+}
 }
 //Function to count the number of matching elements
 //Calling files to create winner screen with fireworks.
-//Code taken from https://codepen.io/funxer/pen/qKRQoj (Elenium fireworks)
 //
 function matchingElements () {
   let over = (matchingCardsArray.length);
