@@ -50,6 +50,7 @@ h1 {
     align-items: center;
     margin: 0 0 3em;
 }
+
 .deck .card {
     height: 125px;
     width: 125px;
@@ -83,7 +84,6 @@ h1 {
     }
   }
 
-
 .deck .card.show {
     font-size: 33px;
 }
@@ -109,7 +109,7 @@ h1 {
     backface-visibility: hidden;
     perspective: 1000px;
   }
-  @keyframes shake {
+@keyframes shake {
     10%, 90% {
       transform: translate3d(-1px, 0, 0);
     }
@@ -135,19 +135,16 @@ h1 {
     width: 345px;
     margin-bottom: 10px;
 }
-
 .score-panel .stars {
     margin: 0;
     padding: 0;
     display: inline-block;
     margin: 0 5px 0 0;
 }
-
 .score-panel .stars li {
     list-style: none;
     display: inline-block;
 }
-
 .score-panel .restart {
     float: right;
     cursor: pointer;
