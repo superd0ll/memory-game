@@ -2,6 +2,8 @@ window.onload= setTimeout(function(){window.confirm("would you like to play agai
 window.location.href = "index.html";
 }, 10000);
 
+//Fireworks code taken from https://codepen.io/funxer/pen/qKRQoj (Elenium fireworks)
+//code slightly altered by me
 // CLASSES
 class Rect {
     constructor(x, y, w, h) {

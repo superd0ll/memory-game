@@ -50,7 +50,6 @@ h1 {
     align-items: center;
     margin: 0 0 3em;
 }
-
 .deck .card {
     height: 125px;
     width: 125px;
@@ -102,9 +101,6 @@ h1 {
       transform: translate3d(8px, 0, 0);
     }
   }
-
-
-
 /*
  * Styles for the Score Panel
  */

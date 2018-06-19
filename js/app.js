@@ -1,13 +1,19 @@
 // Declare all variables
+//matchingCardsArray contains matching cards
 var matchingCardsArray = [];
+//openCardsArray contains the cards that are currently open
 var openCardsArray = [];
+//allMovesArray contains all elements that have been opened
 var allMovesArray =[];
+//not sure if I need this (so far not)
 var myCards = document.getElementById("myDeck");
+//using querySelecor to get node values
 var cardsM = document.querySelectorAll("li");
 var innerCard = document.querySelectorAll("i");
+var ul = document.querySelector("ul");
+//selecting elements by id (id assigned into the index.html file)
 var restartBtn = document.getElementById("restartBtn");
 var moves = document.getElementById("movesNr");
-var ul = document.querySelector("ul");
 
 
 //Add event listener to the repeat button
@@ -18,22 +24,24 @@ window.location.reload(true);
 //Function to add event listener and change the state of the cards
 window.onload = function addCardsId() {
   numberOfMoves();
+
   //Shuffle from https://stackoverflow.com/questions/7070054/javascript-shuffle-html-list-element-order
+  //this method allows the shuffling of node elements
   for (var i = ul.children.length; i >= 0; i--) {
     ul.appendChild(ul.children[Math.random() * i | 0]);
   }
+
   //adding an id to all cards
   for (let i = 0; i < cardsM.length; i++) {
-   // cardsM[i].replaceChild(allCardsArrayNew[i].firstChild,cardsM[i].childNodes[i]);
     cardsM[i].id = i;
 
     //adding an event listener to all cards
     cardsM[i].addEventListener("click", function () {
-      //Change the class of the card to be visible after click
+      //change the class of the card to be visible after click
       cardsM[i].className = "card open show";
       allMovesArray.push(cardsM[i]);
       numberOfMoves();
-      //New array to store card class name
+      //using openCardsArray to store card class name
       openCardsArray.push(cardsM[i].firstElementChild.className);
       if (openCardsArray.length === 2) {
         checkEquality();
@@ -56,7 +64,7 @@ function checkEquality() {
         cardsM[i].className = "card match";
       }
     }
-    //calling function to call winner screen
+    //calling function to show winner screen
     matchingElements ();
     //empty openCardsArray
     openCardsArray = [];
@@ -92,8 +100,8 @@ moves.innerHTML= m + "";
 }
 //Function to count the number of matching elements
 //Calling files to create winner screen with fireworks.
-//Code taken from https://codepen.io/funxer/pen/qKRQoj
-//(Elenium fireworks).
+//Code taken from https://codepen.io/funxer/pen/qKRQoj (Elenium fireworks)
+//
 function matchingElements () {
   let over = (matchingCardsArray.length);
   if (over===16) {
