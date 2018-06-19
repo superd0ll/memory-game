@@ -1,47 +1,45 @@
-// Declare all variables
-//matchingCardsArray contains matching cards
+/* Declare all variables*/
+/*matchingCardsArray contains matching cards*/
 var matchingCardsArray = [];
-//openCardsArray contains the cards that are currently open
+//openCardsArray contains the cards that are currently open*/
 var openCardsArray = [];
-//allMovesArray contains all elements that have been opened
+/*allMovesArray contains all elements that have been opened*/
 var allMovesArray =[];
-//not sure if I need this (so far not)
+/*not sure if I need this (so far not)*/
 var myCards = document.getElementById("myDeck");
-//using querySelecor to get node values
+/*using querySelecor to get node values*/
 var cardsM = document.querySelectorAll("li");
 var innerCard = document.querySelectorAll("i");
 var ul = document.querySelector("ul");
-//selecting elements by id (id assigned into the index.html file)
+/*selecting elements by id (id assigned into the index.html file)*/
 var restartBtn = document.getElementById("restartBtn");
 var moves = document.getElementById("movesNr");
 
 
-//Add event listener to the repeat button
+/*Add event listener to the repeat button*/
 restartBtn.addEventListener('click', function() {
 window.location.reload(true);
 });
 
-//Function to add event listener and change the state of the cards
+/*Function to add event listener and change the state of the cards*/
 window.onload = function addCardsId() {
   numberOfMoves();
 
-  //Shuffle from https://stackoverflow.com/questions/7070054/javascript-shuffle-html-list-element-order
-  //this method allows the shuffling of node elements
+  /*Shuffle from https://stackoverflow.com/questions/7070054/javascript-shuffle-html-list-element-order*/
+  /*this method allows the shuffling of node elements*/
   for (var i = ul.children.length; i >= 0; i--) {
     ul.appendChild(ul.children[Math.random() * i | 0]);
   }
-
-  //adding an id to all cards
+  /*adding an id to all cards*/
   for (let i = 0; i < cardsM.length; i++) {
     cardsM[i].id = i;
-
-    //adding an event listener to all cards
+    /*adding an event listener to all cards*/
     cardsM[i].addEventListener("click", function () {
-      //change the class of the card to be visible after click
+      /*change the class of the card to be visible after click*/
       cardsM[i].className = "card open show";
       allMovesArray.push(cardsM[i]);
       numberOfMoves();
-      //using openCardsArray to store card class name
+      /*using openCardsArray to store card class name*/
       openCardsArray.push(cardsM[i].firstElementChild.className);
       if (openCardsArray.length === 2) {
         checkEquality();
@@ -49,13 +47,13 @@ window.onload = function addCardsId() {
     });
   }
 }
-//Function to check if cards are of equal value
+/*Function to check if cards are of equal value*/
 function checkEquality() {
   if (openCardsArray[0] === openCardsArray[1]) {
     for (let i = 0; i < cardsM.length; i++) {
       if (cardsM[i].firstElementChild.className === openCardsArray[0]) {
         cardsM[i].className = "card match";
-        //pushing all matching elements to matchingCardsArray
+        /*pushing all matching elements to matchingCardsArray*/
         matchingCardsArray.push(cardsM[i]);
       }
     }
@@ -64,9 +62,9 @@ function checkEquality() {
         cardsM[i].className = "card match";
       }
     }
-    //calling function to show winner screen
+    /*calling function to show winner screen*/
     matchingElements ();
-    //empty openCardsArray
+    /*empty openCardsArray*/
     openCardsArray = [];
   }
   if (openCardsArray[0] !== openCardsArray[1]) {
@@ -89,30 +87,28 @@ function checkEquality() {
 
       }
     }
-    //empty openCardsArray
+    /*empty openCardsArray*/
     openCardsArray = [];
   }
 }
-
-//Function to count the number of moves
+/*Function to count the number of moves*/
 function numberOfMoves() {
 let m = (parseInt(allMovesArray.length/2));
 moves.innerHTML= m + "";
-if (m === 16 && matchingCardsArray.length === 16) {
- window.location.href = "winner.html";
 }
-}
-//Function to count the number of matching elements
-//Calling files to create winner screen with fireworks.
-//
-function matchingElements () {
+/*Function to count the number of matching elements*/
+function matchingElements() {
   let over = (matchingCardsArray.length);
-  if (over===16) {
+  if (over===16 && (allMovesArray.length) === 16) {
+    /*showing winner screen with fireworks*/
     window.location.href = "winner.html";
   }
+    else if (matchingCardsArray.length === 16) {
+    /*showing winner screen with fireworks*/
+    window.confirm("Congtatulations! You have finished the game! It took you " + stopwatch.textContent + "and " + (allMovesArray.length/2) + " number of moves");
+  }
 }
-
-//Function to add timer from https://jsfiddle.net/Daniel_Hug/pvk6p/ from Daniel Hug
+/*Function to add timer from https://jsfiddle.net/Daniel_Hug/pvk6p/ from Daniel Hug*/
 var stopwatch = document.getElementById('stopwatch'),
     seconds = 0, minutes = 0, hours = 0,
     t;
@@ -129,7 +125,6 @@ function add() {
     stopwatch.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
     timer();
 }
-
 function timer() {
     t = setTimeout(add, 1000);
     if (matchingCardsArray.length === 16) {
@@ -137,20 +132,3 @@ function timer() {
     }
 }
 timer();
-
-
-// /* Start button */
-// start.onclick = timer;
-
-// /* Stop button */
-// stop.onclick = function() {
-//     clearTimeout(t);
-// }
-
-// /* Clear button */
-// clear.onclick = function() {
-//   stopwatch.textContent = "00:00:00";
-//     seconds = 0; minutes = 0; hours = 0;
-// }
-
-
