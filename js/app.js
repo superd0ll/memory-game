@@ -146,6 +146,3 @@ timer();
 }
 /*end of stopwatch */
 
-function finalScreen() {
-
-}
