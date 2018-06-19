@@ -149,3 +149,8 @@ h1 {
     float: right;
     cursor: pointer;
 }
+/*Canvas to be uses for the fireworks */
+canvas {
+    position: absolute;
+  }
+
