@@ -85,13 +85,11 @@ function checkEquality() {
     openCardsArray = [];
   }
 }
-
 //Function to count the number of moves
 function numberOfMoves() {
 let m = (parseInt(allMovesArray.length/2));
 moves.innerHTML= m + "";
 }
-
 //Function to count the number of matching elements
 //Calling files to create winner screen with fireworks.
 //Code taken from https://codepen.io/funxer/pen/qKRQoj
