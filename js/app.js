@@ -1,53 +1,32 @@
-// Create a list that holds all of your cards
-var faDiamond = document.getElementsByClassName("fa fa-diamond")[0];
-var faPaperPlaneO = document.getElementsByClassName("fa fa-paper-plane-o")[0];
-var faAnchor = document.getElementsByClassName("fa fa-anchor")[0];
-var faBolt = document.getElementsByClassName("fa fa-bolt")[0];
-var faCube = document.getElementsByClassName("fa fa-cube")[0];
-var faLeaf= document.getElementsByClassName("fa fa-leaf")[0];
-var faBicycle = document.getElementsByClassName("fa fa-bicycle")[0];
-var faBomb = document.getElementsByClassName("fa fa-bomb")[0];
-
-var allCardsArray = [faDiamond, faDiamond, faPaperPlaneO, faPaperPlaneO, faAnchor, faAnchor, faBolt, faBolt, faCube, faCube,
-faLeaf, faLeaf, faBicycle, faBicycle, faBomb, faBomb];
-
+// Declare all variables
 var matchingCardsArray = [];
 var openCardsArray = [];
 var allMovesArray =[];
 var myCards = document.getElementById("myDeck");
-var cardsM = myCards.getElementsByTagName("li");
-var innerCard = myCards.getElementsByTagName("i");
+var cardsM = document.querySelectorAll("li");
+var innerCard = document.querySelectorAll("i");
 var restartBtn = document.getElementById("restartBtn");
 var moves = document.getElementById("movesNr");
-/*
- * Display the cards on the page
- *   - shuffle the list of cards using the provided "shuffle" method below
- *   - loop through each card and create its HTML
- *   - add each card's HTML to the page
- */
+var ul = document.querySelector("ul");
+
+
 //Add event listener to the repeat button
 restartBtn.addEventListener('click', function() {
 window.location.reload(true);
 });
-//Shuffle function from http://stackoverflow.com/a/2450976
-function shuffle(xcardsArray) {
-  var currentIndex = xcardsArray.length, temporaryValue, randomIndex;
-  while (currentIndex !== 0) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-    temporaryValue = xcardsArray[currentIndex];
-    xcardsArray[currentIndex] = xcardsArray[randomIndex];
-    xcardsArray[randomIndex] = temporaryValue;
-  }
-  return xcardsArray;
-}
+
 //Function to add event listener and change the state of the cards
 window.onload = function addCardsId() {
-  shuffle(allCardsArray);
   numberOfMoves();
+  //Shuffle from https://stackoverflow.com/questions/7070054/javascript-shuffle-html-list-element-order
+  for (var i = ul.children.length; i >= 0; i--) {
+    ul.appendChild(ul.children[Math.random() * i | 0]);
+  }
   //adding an id to all cards
   for (let i = 0; i < cardsM.length; i++) {
+   // cardsM[i].replaceChild(allCardsArrayNew[i].firstChild,cardsM[i].childNodes[i]);
     cardsM[i].id = i;
+
     //adding an event listener to all cards
     cardsM[i].addEventListener("click", function () {
       //Change the class of the card to be visible after click
@@ -122,3 +101,5 @@ function matchingElements () {
     window.location.href = "winner.html";
   }
 }
+
+
