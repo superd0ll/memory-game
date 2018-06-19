@@ -73,7 +73,7 @@ function checkEquality() {
         setTimeout(function () {
 
           cardsM[i].className = "card";
-        }, 1000);
+        }, 500);
       }
     }
     for (let i = 0; i < cardsM.length; i++) {
@@ -82,7 +82,7 @@ function checkEquality() {
         setTimeout(function () {
 
           cardsM[i].className = "card";
-        }, 1000);
+        }, 500);
 
       }
     }
@@ -100,19 +100,23 @@ function numberOfMoves() {
 function matchingElements() {
   let over = (matchingCardsArray.length);
   if (over===16 && (allMovesArray.length) === 16) {
-    /*calling fireWorks function to show fireworks*/
-    window.location.href = "winner.html";
+  /*showing message window with stats*/
+  window.onload = setTimeout(function(){window.confirm("Congratulations! You won! It took you " + stopwatch.textContent + " time, and " + (allMovesArray.length/2) + " moves. You won 3 stars!");
+  window.location.href = "index.html";
+  }, 500);
+}
+else if (matchingCardsArray.length === 16 && ((allMovesArray.length) > 16) && ((allMovesArray.length) <= 40)) {
     /*showing message window with stats*/
-    window.confirm("Congratulations! You won! It took you " + stopwatch.textContent + " time, and " + (allMovesArray.length/2) + " moves. You won 3 stars!" );
-  }
-    else if (matchingCardsArray.length === 16 && ((allMovesArray.length) > 16) && ((allMovesArray.length) <= 40)) {
+    window.onload = setTimeout(function(){window.confirm("Congratulations! You won! It took you " + stopwatch.textContent + " time, and " + (allMovesArray.length/2) + " moves. You won 1 star!");
+    window.location.href = "index.html";
+  }, 500);
+}
+else if (matchingCardsArray.length === 16 && ((allMovesArray.length) > 40)) {
     /*showing message window with stats*/
-    window.confirm("Congratulations! You won! It took you " + stopwatch.textContent + " time, and " + (allMovesArray.length/2) + " moves. You won 1 star!" );
-  }
-  else if (matchingCardsArray.length === 16 && ((allMovesArray.length) > 40)) {
-    /*showing message window with stats*/
-    window.confirm("Congratulations! You won! It took you " + stopwatch.textContent + " time, and " + (allMovesArray.length/2) + " moves. You won 2 stars!" );
-  }
+    window.onload = setTimeout(function(){window.confirm("Congratulations! You won! It took you " + stopwatch.textContent + " time, and " + (allMovesArray.length/2) + " moves. You won 2 stars!");
+  window.location.href = "index.html";
+  }, 500);
+}
 }
 /*Function gameTime to add timer from https://jsfiddle.net/Daniel_Hug/pvk6p/ (by Daniel Hug)*/
 function gameTime() {
@@ -141,3 +145,7 @@ function timer() {
 timer();
 }
 /*end of stopwatch */
+
+function finalScreen() {
+
+}
