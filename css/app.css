@@ -63,6 +63,7 @@ h1 {
     justify-content: center;
     align-items: center;
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+    pointer-events: auto;
 }
 
 .deck .card.open {
@@ -70,6 +71,7 @@ h1 {
     background: #02ccba;
     cursor: default;
     animation: color-me-in 5s; /* other keywords like "infinite alternate" can be useful here */
+    pointer-events: none;
 }
 @keyframes color-me-in {
     0% {
@@ -86,6 +88,7 @@ h1 {
 
 .deck .card.show {
     font-size: 33px;
+    pointer-events: none;
 }
 @keyframes color-me-in {
     0% {
@@ -108,6 +111,7 @@ h1 {
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
     perspective: 1000px;
+    pointer-events: none;
   }
 @keyframes shake {
     10%, 90% {
