@@ -10,7 +10,7 @@ The Memory Game Project by <a href="https://udacity.com">Udacity</a> is all abou
 * Live version
 
 ## About the game
-![memory game](https://github.com/superd0ll/memory-game/blob/master/img/memory-game.png| width=48)
+<img src="https://github.com/superd0ll/memory-game/blob/master/img/memory-game.png" alt="memory game" style="width:250px;height:35000px;">
 This memory game has been created with vanilla JavaScript with no support by any external JavaScript library such as for example jQuery.
 The memory game has been created according to the instructions given by <a href="https://udacity.com">Udacity</a>.
 For instructions about playing the game please see below.
