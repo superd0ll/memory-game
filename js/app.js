@@ -118,20 +118,35 @@ function matchingElements() {
 var over = (matchingCardsArray.length);
 if (over===16 && (allMovesArray.length) === 16) {
   //showing message window with stats
-  window.onload = setTimeout(function(){window.confirm("Congratulations! You won! It took you " + stopwatch.textContent + " time, and " + (allMovesArray.length/2) + " moves. You won 3 stars!");
+  window.onload = setTimeout(function()
+  {window.confirm(`Congratulations! You won!
+  It took you ${stopwatch.textContent} time,
+  and ${allMovesArray.length/2} moves.
+  You won 3 stars!
+  Play again?`);
   window.location.href = "index.html";
   }, 500);
 }
 else if (over === 16 && ((allMovesArray.length) > 16) && ((allMovesArray.length) <= 40)) {
     //showing message window with stats
-    window.onload = setTimeout(function(){window.confirm("Congratulations! You won! It took you " + stopwatch.textContent + " time, and " + (allMovesArray.length/2) + " moves. You won 1 star!");
+    window.onload = setTimeout(function()
+    {window.confirm(`Congratulations!
+    You won! It took you ${stopwatch.textContent} time,
+    and ${allMovesArray.length/2} moves.
+    You won 1 star!
+    Play again?`);
     window.location.href = "index.html";
   }, 500);
 }
 else if (over === 16 && ((allMovesArray.length) > 40)) {
 
     //showing message window with stats
-    window.onload = setTimeout(function(){window.confirm("Congratulations! You won! It took you " + stopwatch.textContent + " time, and " + (allMovesArray.length/2) + " moves. You won 2 stars!");
+    window.onload = setTimeout(function()
+    {window.confirm(`Congratulations! You won!
+    It took you ${stopwatch.textContent} time,
+    and ${allMovesArray.length/2} moves.
+    You won 2 stars!
+    Play again?`);
     window.location.href = "index.html";
   }, 500);
 }
