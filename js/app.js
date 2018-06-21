@@ -73,11 +73,12 @@ function checkEquality() {
 
     //calling matchingElements to show winner screen
     matchingElements();
+    allStars();
     //empty openCardsArray
     openCardsArray = [];
   }
   if (openCardsArray[0] !== openCardsArray[1]) {
-    for (let i = 0; i < cardsM.length; i++) {
+      for (let i = 0; i < cardsM.length; i++) {
       if (cardsM[i].firstElementChild.className !== openCardsArray[0] && cardsM[i].className === "card open show") {
 
         setTimeout(function () {
@@ -95,12 +96,12 @@ function checkEquality() {
         }, 500);
 
       }
-    }
 
+    }
+    allStars();
     //empty openCardsArray
     openCardsArray = [];
   }
-  allStars();
 }
 /**
  * Count the number of moves
@@ -116,7 +117,7 @@ function numberOfMoves() {
 function matchingElements() {
   //over equals the length of matchingCardsArray
 var over = (matchingCardsArray.length);
-if (over===16 && (allMovesArray.length) === 16) {
+if (over===16 && (allMovesArray.length/2) === 16) {
   //showing message window with stats
   window.onload = setTimeout(function()
   {window.confirm(`Congratulations! You won!
@@ -127,28 +128,27 @@ if (over===16 && (allMovesArray.length) === 16) {
   window.location.href = "index.html";
   }, 500);
 }
-else if (over === 16 && ((allMovesArray.length) > 16) && ((allMovesArray.length) <= 40)) {
+else if (over === 16 && ((allMovesArray.length/2) > 40)) {
     //showing message window with stats
     window.onload = setTimeout(function()
-    {window.confirm(`Congratulations!
-    You won! It took you ${stopwatch.textContent} time,
+    {window.confirm(`Congratulations! You won!
+    It took you ${stopwatch.textContent} time,
     and ${allMovesArray.length/2} moves.
     You won 1 star!
     Play again?`);
     window.location.href = "index.html";
   }, 500);
 }
-else if (over === 16 && ((allMovesArray.length) > 40)) {
-
-    //showing message window with stats
-    window.onload = setTimeout(function()
-    {window.confirm(`Congratulations! You won!
-    It took you ${stopwatch.textContent} time,
-    and ${allMovesArray.length/2} moves.
-    You won 2 stars!
-    Play again?`);
-    window.location.href = "index.html";
-  }, 500);
+else if (over === 16 && ((allMovesArray.length/2) > 16) && ((allMovesArray.length/2) <= 40)) {
+  //showing message window with stats
+  window.onload = setTimeout(function()
+  {window.confirm(`Congratulations!
+  You won! It took you ${stopwatch.textContent} time,
+  and ${allMovesArray.length/2} moves.
+  You won 2 stars!
+  Play again?`);
+  window.location.href = "index.html";
+}, 500);
 }
 }
 /**
@@ -157,16 +157,15 @@ else if (over === 16 && ((allMovesArray.length) > 40)) {
  * moves
  */
 function allStars() {
-if ((allMovesArray.length/2) === 16) {
+if (allMovesArray.length/2 <= 16) {
 starOne.className = "fa fa-star";
 starTwo.className = "fa fa-star";
 starThree.className ="fa fa-star";
 }
-
-else if (((allMovesArray.length/2) >16) && ((allMovesArray.length/2)<40)) {
-  starThree.className ="fa fa-star-o";
+else if(((allMovesArray.length/2) > 16) && ((allMovesArray.length/2) <= 40)) {
+starThree.className ="fa fa-star-o";
 }
-else if((allMovesArray.length/2)>=40) {
+else if ((allMovesArray.length/2) > 40) {
 starTwo.className = "fa fa-star-o";
 starThree.className ="fa fa-star-o";
 }
